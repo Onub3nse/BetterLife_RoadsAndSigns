@@ -80,7 +80,7 @@ public static class roadsUtil
         Lyst<RoadLaneSpec> laneSpecs2 = new Lyst<RoadLaneSpec>();
         laneSpecs = ImmutableArray.Empty;
         Lyst<LaneTerrainConnectionSpec> laneTerrainConnectionSpecs = new Lyst<LaneTerrainConnectionSpec>();
-
+          
         foreach (roadsUtil.mLaneData lanedata in thisLane)
         {
             double scaledFirstLaneY = lanedata.LaneTrajectory.ControlPoints[0].Y.ToDouble();
