@@ -1,0 +1,12 @@
+﻿{
+	"id": "BetterLife_RoadsAndSigns",
+	"version": "0.6.0",
+	"primary_dlls": [ "0Harmony.dll", "BetterLife_RoadsAndSigns.dll" ],
+	"non_locking_dll_load": true,
+	"can_add_to_saved_game": true,
+	"authors": "MaViTTo",
+	"description_short": "Roads, Signs and new transport.",
+	"description_long": "Roads, Signs and new transport and balancers.",
+	"display_name": "BeTTerLife: Roads and Signs"
+
+}
