@@ -67,7 +67,8 @@ namespace BetterLife_RoadsAndSigns
             ceRoadProto bidirTSection = CreateProto(registrator, BetterLIDs.IndustrialRoads.bidirTSection, "T-Section", btLayouts.Layouts.bidirTSection, BLCosts.Roads.Industrial,
                 BetterLIDs.RoadEntities.bidirTee.asset, BetterLIDs.RoadEntities.bidirTee.icon, BetterLIDs.ToolBars.RoadsIndustrial, 0, 0, 0, noLoop);
 
-            blRoadEntranceEntityProto bidirEntrance = CreateRoadEntrance(registrator, BetterLIDs.IndustrialRoads.bidirEntrance, "Entrance/Exit", btLayouts.Layouts.bidirEntrance, BLCosts.Roads.Industrial,
+
+            RoadEntranceEntityProto bidirEntrance = CreateRoadEntrance(registrator, BetterLIDs.IndustrialRoads.bidirEntrance, "Entrance/Exit", btLayouts.Layouts.bidirEntrance, BLCosts.Roads.Industrial,
                 BetterLIDs.RoadEntities.bidirEntrance.asset, BetterLIDs.RoadEntities.bidirEntrance.icon, BetterLIDs.ToolBars.RoadsIndustrial, 0, 0, 0, false, btLayouts.RoadLanes.bidirEntrance);
 
             ceRoadProto bidirStraight = CreateProto(registrator, BetterLIDs.IndustrialRoads.bidirStraight, "Straight", btLayouts.Layouts.bidirStraight, BLCosts.Roads.Industrial,
@@ -84,10 +85,10 @@ namespace BetterLife_RoadsAndSigns
 
 
             // One Way Industrial Roads Assets
-            blRoadEntranceEntityProto onewayEntrance = CreateRoadEntrance(registrator, BetterLIDs.IndustrialRoads.onewayEntrance, "One Way Entrance", btLayouts.Layouts.onewayEntrance, roadCosts1,
+            RoadEntranceEntityProto onewayEntrance = CreateRoadEntrance(registrator, BetterLIDs.IndustrialRoads.onewayEntrance, "One Way Entrance", btLayouts.Layouts.onewayEntrance, roadCosts1,
                 BetterLIDs.RoadEntities.onewayEntrance.asset, BetterLIDs.RoadEntities.onewayEntrance.icon, BetterLIDs.ToolBars.RoadsDirt, 0, 0, 0, false, btLayouts.RoadLanes.onewayEntrance);
 
-            blRoadEntranceEntityProto onewayExit = CreateRoadEntrance(registrator, BetterLIDs.IndustrialRoads.onewayExit, "One Way Exit", btLayouts.Layouts.onewayExit, roadCosts1,
+            RoadEntranceEntityProto onewayExit = CreateRoadEntrance(registrator, BetterLIDs.IndustrialRoads.onewayExit, "One Way Exit", btLayouts.Layouts.onewayExit, roadCosts1,
                 BetterLIDs.RoadEntities.onewayExit.asset, BetterLIDs.RoadEntities.onewayExit.icon, BetterLIDs.ToolBars.RoadsDirt, 0, 0, 0, false, btLayouts.RoadLanes.onewayExit);
 
             ceRoadProto onewayStraight = CreateProto(registrator, BetterLIDs.IndustrialRoads.onewayStraight, "One Way Straight", btLayouts.Layouts.onewayStraight, roadCosts1,
@@ -107,7 +108,7 @@ namespace BetterLife_RoadsAndSigns
 
             // One Way Train Bridge Segments
 
-            blRoadEntranceEntityProto onewayTrainBridgeEntrance1 = CreateRoadEntrance(registrator, BetterLIDs.IndustrialRoads.oneWayTrainBridgeEntrance1, "Train Bridge Entrance",
+            RoadEntranceEntityProto onewayTrainBridgeEntrance1 = CreateRoadEntrance(registrator, BetterLIDs.IndustrialRoads.oneWayTrainBridgeEntrance1, "Train Bridge Entrance",
                 btLayouts.Layouts.onewayTrainBridgeEntrance1, roadCosts1,
                 BetterLIDs.RoadEntities.onewayTrainBridgeEntrance1.asset, BetterLIDs.RoadEntities.onewayTrainBridgeEntrance1.icon, BetterLIDs.ToolBars.RoadsBridgeSegments, 0, 0, 0, false,
                 btLayouts.RoadLanes.onewayTrainBridgeEntrance1);
@@ -124,7 +125,7 @@ namespace BetterLife_RoadsAndSigns
                 btLayouts.Layouts.onewayTrainBridgeCorner1, roadCosts1,
                 BetterLIDs.RoadEntities.onewayTrainBridgeCorner1.asset, BetterLIDs.RoadEntities.onewayTrainBridgeCorner1.icon, BetterLIDs.ToolBars.RoadsBridgeSegments, 0, 0, 0, noLoop);
 
-            blRoadEntranceEntityProto onewayTrainBridgeExit1 = CreateRoadEntrance(registrator, BetterLIDs.IndustrialRoads.oneWayTrainBridgeExit1, "Bridge Exit",
+            RoadEntranceEntityProto onewayTrainBridgeExit1 = CreateRoadEntrance(registrator, BetterLIDs.IndustrialRoads.oneWayTrainBridgeExit1, "Bridge Exit",
                 btLayouts.Layouts.onewayTrainBridgeExit1, roadCosts1,
                 BetterLIDs.RoadEntities.onewayTrainBridgeExit1.asset, BetterLIDs.RoadEntities.onewayTrainBridgeExit1.icon, BetterLIDs.ToolBars.RoadsBridgeSegments, 0, 0, 0, false,
                 btLayouts.RoadLanes.onewayTrainBridgeExit1);
@@ -237,7 +238,7 @@ namespace BetterLife_RoadsAndSigns
             return new CustomLayoutToken($"m0{suffix}", specFactory);
         }
 
-        public blRoadEntranceEntityProto CreateRoadEntrance(ProtoRegistrator registrator, StaticEntityProto.ID id, string coment, string[] entLayout, EntityCostsTpl entCosts, string assetPath,
+        public RoadEntranceEntityProto CreateRoadEntrance(ProtoRegistrator registrator, StaticEntityProto.ID id, string coment, string[] entLayout, EntityCostsTpl entCosts, string assetPath,
                                  string assetIcon, Proto.ID toolbarCategory, int assetXoffset, int assetYoffest, int assetZoffset,
                                  bool noPlayer, roadsUtil.mLaneData[] thisLane)
         {
@@ -321,12 +322,12 @@ namespace BetterLife_RoadsAndSigns
                 categories = ImmutableArray.Create(registrator.GetCategory(toolbarCategory));
             }
 
-            blRoadEntranceEntityProto.Gfx graphics = new blRoadEntranceEntityProto.Gfx(assetPath, categories, new RelTile3f(assetXoffset, assetYoffest, assetZoffset), 45.Degrees());
+            RoadEntranceEntityProto.Gfx graphics = new RoadEntranceEntityProto.Gfx(assetPath, categories, new RelTile3f(assetXoffset, assetYoffest, assetZoffset), 45.Degrees());
 
             typeof(LayoutEntityProto.Gfx).GetProperty(nameof(LayoutEntityProto.Gfx.IconPath), BindingFlags.Public | BindingFlags.Instance).SetValue(graphics, assetIcon);
             typeof(LayoutEntityProto.Gfx).GetField(nameof(LayoutEntityProto.Gfx.IconIsCustom), BindingFlags.Public | BindingFlags.Instance).SetValue(graphics, true);
 
-            blRoadEntranceEntityProto roadEntranceProto = new blRoadEntranceEntityProto(roadId, strings, layout, none, 0.5.Tiles(), lanespecs, lanesData, trajData, terrainConnections, graphics, true, false, false);
+            RoadEntranceEntityProto roadEntranceProto = new RoadEntranceEntityProto(roadId, strings, layout, none, 0.5.Tiles(), lanespecs, lanesData, trajData, terrainConnections, graphics, true, false, false);
             roadEntranceProto.AddParam(new DrawArrowWileBuildingProtoParam(2f));
 
 
