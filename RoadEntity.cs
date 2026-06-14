@@ -25,7 +25,7 @@ namespace BetterLife_RoadsAndSigns
 {
 
     [GlobalDependency(RegistrationMode.AsAllInterfaces, false, false)]
-    internal class roadsEntranceInspector : BaseInspector<blRoadEntranceEntity>
+    public class roadsEntranceInspector : BaseInspector<blRoadEntranceEntity>
     {
         private readonly MultiLineOverlayRendererHelper m_groundLineRenderer;
         private readonly MultiLineOverlayRendererHelper m_groundLineRenderer2;
@@ -216,7 +216,7 @@ namespace BetterLife_RoadsAndSigns
 
 
     [GlobalDependency(RegistrationMode.AsAllInterfaces, false, false)]
-    internal class roadsInspector : BaseInspector<blRoadEntity>
+    public class roadsInspector : BaseInspector<blRoadEntity>
     {
         //private readonly LineOverlayRendererHelper m_goalLineRenderer;
         private readonly MultiLineOverlayRendererHelper m_groundLineRenderer;

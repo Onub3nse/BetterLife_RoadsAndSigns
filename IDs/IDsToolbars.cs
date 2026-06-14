@@ -11,9 +11,14 @@ namespace BetterLife_RoadsAndSigns
             public static readonly ToolbarID RoadsDirt = new ToolbarID("Dirt");
             public static readonly ToolbarID RoadsIndustrial = new ToolbarID("Industrial");
             public static readonly ToolbarID RoadsIndustrialOneWay = new ToolbarID("IndustrialOneWay");
+            public static readonly ToolbarID RoadsIndustrialOneWay2 = new ToolbarID("IndustrialOneWay2");
             public static readonly ToolbarID RoadsBridgeSegments = new ToolbarID("RoadBridgeSegments");
             public static readonly ToolbarID WallA = new ToolbarID("WallA");
             public static readonly ToolbarID Signs = new ToolbarID("Signs");
+            public static readonly ToolbarID Signs_SpeedLimits = new ToolbarID("Signs_SpeedLimits");
+            public static readonly ToolbarID Signs_Directions = new ToolbarID("Signs_Directions");
+            public static readonly ToolbarID Signs_Buildings = new ToolbarID("Signs_Buildings");
+            public static readonly ToolbarID Signs_Misc = new ToolbarID("Signs_Misc");
             public static readonly ToolbarID TransPORTparent = new ToolbarID("TransPORTParent");
             public static readonly ToolbarID TransPORT = new ToolbarID("TransPORT");
             public static readonly ToolbarID Balancers = new ToolbarID("BalancersParent");

@@ -19,6 +19,10 @@ namespace BetterLife_RoadsAndSigns
 
         public void RegisterData(ProtoRegistrator registrator)
         {
+            //string[] signLayout =
+            //{
+            //    "_1="
+            //};
             string[] signLayout =
             {
                 "_1="
@@ -46,24 +50,46 @@ namespace BetterLife_RoadsAndSigns
 
 
             EntityCostsTpl costs = Build.CP(2).MaintenanceT1(0).Priority(8).Workers(0);
+            
+            CreateProto(registrator, BetterLIDs.Signs.Sign_Stop, "STOP", signLayout, costs, "Assets/BetterLife/Signs/sign_stop.prefab", "Assets/BetterLife/IconsRoad/Signs/Sign_Stop.png", BetterLIDs.ToolBars.Signs_Directions, 0, 0, 0, infiniLoop);
+            CreateProto(registrator, BetterLIDs.Signs.Sign_Fwd, "Forward", signLayout, costs, "Assets/BetterLife/Signs/sign_forward.prefab", "Assets/BetterLife/IconsRoad/Signs/Sign_Fwd.png", BetterLIDs.ToolBars.Signs_Directions, 0, 0, 0, infiniLoop);
+            CreateProto(registrator, BetterLIDs.Signs.Sign_Lft, "Left/Right", signLayout, costs, "Assets/BetterLife/Signs/sign_left.prefab", "Assets/BetterLife/IconsRoad/Signs/Sign_Lft.png", BetterLIDs.ToolBars.Signs_Directions, 0, 0, 0, infiniLoop);
+            CreateProto(registrator, BetterLIDs.Signs.Sign_Rocks, "Rocks", signLayout, costs, "Assets/BetterLife/Signs/sign_rocks.prefab", "Assets/BetterLife/IconsRoad/Signs/Sign_Rocks.png", BetterLIDs.ToolBars.Signs_Misc, 0, 0, 0, infiniLoop);
+            CreateProto(registrator, BetterLIDs.Signs.Sign_Drop, "Drop", signLayout, costs, "Assets/BetterLife/Signs/sign_drop.prefab", "Assets/BetterLife/IconsRoad/Signs/Sign_Drop.png", BetterLIDs.ToolBars.Signs_Misc, 0, 0, 0, infiniLoop);
+            CreateProto(registrator, BetterLIDs.Signs.Sign_Highway, "Highway", signLayout, costs, "Assets/BetterLife/Signs/Sign_Highway.prefab", "Assets/BetterLife/IconsRoad/Signs/highway.png", BetterLIDs.ToolBars.Signs_Misc, 0, 0, 0, infiniLoop);
+            CreateProto(registrator, BetterLIDs.Signs.Sign_Limit50, "Limit 50", signLayout, costs, "Assets/BetterLife/Signs/sign_50.prefab", "Assets/BetterLife/IconsRoad/Signs/limit50.png", BetterLIDs.ToolBars.Signs_SpeedLimits, 0, 0, 0, infiniLoop);
+            CreateProto(registrator, BetterLIDs.Signs.Sign_Limit80, "Limit 80", signLayout, costs, "Assets/BetterLife/Signs/sign_80.prefab", "Assets/BetterLife/IconsRoad/Signs/limit80.png", BetterLIDs.ToolBars.Signs_SpeedLimits, 0, 0, 0, infiniLoop);
+            CreateProto(registrator, BetterLIDs.Signs.Sign_Limit100, "Limit 100", signLayout, costs, "Assets/BetterLife/Signs/sign_100.prefab", "Assets/BetterLife/IconsRoad/Signs/limit100.png", BetterLIDs.ToolBars.Signs_SpeedLimits, 0, 0, 0, infiniLoop);
+            CreateProto(registrator, BetterLIDs.Signs.Sign_Limit120, "Limit 120", signLayout, costs, "Assets/BetterLife/Signs/sign_120.prefab", "Assets/BetterLife/IconsRoad/Signs/limit120.png", BetterLIDs.ToolBars.Signs_SpeedLimits, 0, 0, 0, infiniLoop);
+            CreateProto(registrator, BetterLIDs.Signs.Sign_Pedestian, "Pedestian", signLayout, costs, "Assets/BetterLife/Signs/sign_pedestian.prefab", "Assets/BetterLife/IconsRoad/Signs/pedestian.png", BetterLIDs.ToolBars.Signs_Misc, 0, 0, 0, infiniLoop);
+            CreateProto(registrator, BetterLIDs.Signs.Sign_Train, "Train", signLayout, costs, "Assets/BetterLife/Signs/Sign_Train.prefab", "Assets/BetterLife/IconsRoad/Signs/Sign_Train.png", BetterLIDs.ToolBars.Signs_Misc, 0, 0, 0, infiniLoop);
+            CreateProto(registrator, BetterLIDs.Signs.Sign_Tunnel, "Tunnel", signLayout, costs, "Assets/BetterLife/Signs/sign_tunnel.prefab", "Assets/BetterLife/IconsRoad/Signs/tunnel.png", BetterLIDs.ToolBars.Signs_Misc, 0, 0, 0, infiniLoop);
+            CreateProto(registrator, BetterLIDs.Signs.Sign_Workers, "Workers", signLayout, costs, "Assets/BetterLife/Signs/sign_workers.prefab", "Assets/BetterLife/IconsRoad/Signs/workers.png", BetterLIDs.ToolBars.Signs_Misc, 0, 0, 0, infiniLoop);
+            CreateProto(registrator, BetterLIDs.Signs.Sign_WrongWay, "Wrong Way", signLayout, costs, BetterLIDs.dPath.sign_wrongWay.asset, BetterLIDs.dPath.sign_wrongWay.icon, BetterLIDs.ToolBars.Signs_Directions, 0, 0, 0, infiniLoop);
 
-            CreateProto(registrator, BetterLIDs.Signs.Sign_Stop, "STOP", signLayout, costs, "Assets/BetterLife/Signs/Sign_Stop.prefab", "Assets/BetterLife/Icons/Signs/Sign_Stop.png", BetterLIDs.ToolBars.Signs, 0, 0, 0, infiniLoop);
-            CreateProto(registrator, BetterLIDs.Signs.Sign_Fwd, "Forward", signLayout, costs, "Assets/BetterLife/Signs/Sign_Fwd.prefab", "Assets/BetterLife/Icons/Signs/Sign_Fwd.png", BetterLIDs.ToolBars.Signs, 0, 0, 0, infiniLoop);
-            CreateProto(registrator, BetterLIDs.Signs.Sign_Lft, "Left/Right", signLayout, costs, "Assets/BetterLife/Signs/Sign_Lft.prefab", "Assets/BetterLife/Icons/Signs/Sign_Lft.png", BetterLIDs.ToolBars.Signs, 0, 0, 0, infiniLoop);
-            CreateProto(registrator, BetterLIDs.Signs.Sign_Rocks, "Rocks", signLayout, costs, "Assets/BetterLife/Signs/Sign_Rocks.prefab", "Assets/BetterLife/Icons/Signs/Sign_Rocks.png", BetterLIDs.ToolBars.Signs, 0, 0, 0, infiniLoop);
-            CreateProto(registrator, BetterLIDs.Signs.Sign_Drop, "Drop", signLayout, costs, "Assets/BetterLife/Signs/Sign_Drop.prefab", "Assets/BetterLife/Icons/Signs/Sign_Drop.png", BetterLIDs.ToolBars.Signs, 0, 0, 0, infiniLoop);
-            CreateProto(registrator, BetterLIDs.Signs.Sign_Highway, "Highway", signLayout, costs, "Assets/BetterLife/Signs/Sign_Highway.prefab", "Assets/BetterLife/Icons/Signs/highway.png", BetterLIDs.ToolBars.Signs, 0, 0, 0, infiniLoop);
-            CreateProto(registrator, BetterLIDs.Signs.Sign_Limit50, "Limit 50", signLayout, costs, "Assets/BetterLife/Signs/Sign_Limit50.prefab", "Assets/BetterLife/Icons/Signs/limit50.png", BetterLIDs.ToolBars.Signs, 0, 0, 0, infiniLoop);
-            CreateProto(registrator, BetterLIDs.Signs.Sign_Limit80, "Limit 80", signLayout, costs, "Assets/BetterLife/Signs/Sign_Limit80.prefab", "Assets/BetterLife/Icons/Signs/limit80.png", BetterLIDs.ToolBars.Signs, 0, 0, 0, infiniLoop);
-            CreateProto(registrator, BetterLIDs.Signs.Sign_Limit100, "Limit 100", signLayout, costs, "Assets/BetterLife/Signs/Sign_Limit100.prefab", "Assets/BetterLife/Icons/Signs/limit100.png", BetterLIDs.ToolBars.Signs, 0, 0, 0, infiniLoop);
-            CreateProto(registrator, BetterLIDs.Signs.Sign_Limit120, "Limit 120", signLayout, costs, "Assets/BetterLife/Signs/Sign_Limit120.prefab", "Assets/BetterLife/Icons/Signs/limit120.png", BetterLIDs.ToolBars.Signs, 0, 0, 0, infiniLoop);
-            CreateProto(registrator, BetterLIDs.Signs.Sign_Pedestian, "Pedestian", signLayout, costs, "Assets/BetterLife/Signs/Sign_Pedestian.prefab", "Assets/BetterLife/Icons/Signs/pedestian.png", BetterLIDs.ToolBars.Signs, 0, 0, 0, infiniLoop);
-            CreateProto(registrator, BetterLIDs.Signs.Sign_Train, "Train", signLayout, costs, "Assets/BetterLife/Signs/Sign_Train.prefab", "Assets/BetterLife/Icons/Signs/Sign_Train.png", BetterLIDs.ToolBars.Signs, 0, 0, 0, infiniLoop);
-            CreateProto(registrator, BetterLIDs.Signs.Sign_Tunnel, "Tunnel", signLayout, costs, "Assets/BetterLife/Signs/Sign_Tunnel.prefab", "Assets/BetterLife/Icons/Signs/tunnel.png", BetterLIDs.ToolBars.Signs, 0, 0, 0, infiniLoop);
-            CreateProto(registrator, BetterLIDs.Signs.Sign_Workers, "Workers", signLayout, costs, "Assets/BetterLife/Signs/Sign_Construction.prefab", "Assets/BetterLife/Icons/Signs/workers.png", BetterLIDs.ToolBars.Signs, 0, 0, 0, infiniLoop);
-            CreateProto(registrator, BetterLIDs.Signs.Sign_COI1, "COI Sign 1", signLayout, costs, BetterLIDs.dPath.sign_coi1.asset, BetterLIDs.dPath.sign_coi1.icon, BetterLIDs.ToolBars.Signs, 0, 0, 0, infiniLoop);
-            CreateProto(registrator, BetterLIDs.Signs.Sign_WrongWay, "Wrong Way", signLayout, costs, BetterLIDs.dPath.sign_wrongWay.asset, BetterLIDs.dPath.sign_wrongWay.icon, BetterLIDs.ToolBars.Signs, 0, 0, 0, infiniLoop);
-            CreateProto(registrator, BetterLIDs.Signs.Sign_Directional1, "Directional", signLayout, costs, BetterLIDs.dPath.sign_directional1.asset, BetterLIDs.dPath.sign_directional1.icon, BetterLIDs.ToolBars.Signs, 0, 0, 0, infiniLoop);
+            CreateProto(registrator, BetterLIDs.Signs.Sign_50plus, "Limit > 50", signLayout, costs, BetterLIDs.dPath.sign_50plus.asset, BetterLIDs.dPath.sign_50plus.icon, BetterLIDs.ToolBars.Signs_SpeedLimits, 0, 0, 0, infiniLoop);
+            CreateProto(registrator, BetterLIDs.Signs.Sign_80plus, "Limit > 80", signLayout, costs, BetterLIDs.dPath.sign_80plus.asset, BetterLIDs.dPath.sign_80plus.icon, BetterLIDs.ToolBars.Signs_SpeedLimits, 0, 0, 0, infiniLoop);
+            CreateProto(registrator, BetterLIDs.Signs.Sign_100plus, "Limit > 100", signLayout, costs, BetterLIDs.dPath.sign_100plus.asset, BetterLIDs.dPath.sign_100plus.icon, BetterLIDs.ToolBars.Signs_SpeedLimits, 0, 0, 0, infiniLoop);
+            CreateProto(registrator, BetterLIDs.Signs.Sign_120plus, "Limit > 120 ", signLayout, costs, BetterLIDs.dPath.sign_120plus.asset, BetterLIDs.dPath.sign_120plus.icon, BetterLIDs.ToolBars.Signs_SpeedLimits, 0, 0, 0, infiniLoop);
+            CreateProto(registrator, BetterLIDs.Signs.Sign_Port, "Port", signLayout, costs, BetterLIDs.dPath.sign_port.asset, BetterLIDs.dPath.sign_port.icon, BetterLIDs.ToolBars.Signs_Buildings, 0, 0, 0, infiniLoop);
+            CreateProto(registrator, BetterLIDs.Signs.Sign_Parking, "Parking", signLayout, costs, BetterLIDs.dPath.sign_parking.asset, BetterLIDs.dPath.sign_parking.icon, BetterLIDs.ToolBars.Signs_Buildings, 0, 0, 0, infiniLoop);
+            CreateProto(registrator, BetterLIDs.Signs.Sign_BiDir, "Priority", signLayout, costs, BetterLIDs.dPath.sign_priority.asset, BetterLIDs.dPath.sign_priority.icon, BetterLIDs.ToolBars.Signs_Directions, 0, 0, 0, infiniLoop);
+            CreateProto(registrator, BetterLIDs.Signs.Sign_Directional1, "Directional", signLayout, costs, BetterLIDs.dPath.sign_directional1.asset, BetterLIDs.dPath.sign_directional1.icon, BetterLIDs.ToolBars.Signs_Directions, 0, 0, 0, infiniLoop);
+            CreateProto(registrator, BetterLIDs.Signs.Sign_CedaElPaso, "Give Way", signLayout, costs, BetterLIDs.dPath.sign_pref.asset, BetterLIDs.dPath.sign_pref.icon, BetterLIDs.ToolBars.Signs_Directions, 0, 0, 0, infiniLoop);
+            CreateProto(registrator, BetterLIDs.Signs.Sign_MainRoad, "Main Road", signLayout, costs, BetterLIDs.dPath.sign_youpref.asset, BetterLIDs.dPath.sign_youpref.icon, BetterLIDs.ToolBars.Signs_Directions, 0, 0, 0, infiniLoop);
+            CreateProto(registrator, BetterLIDs.Signs.Sign_DeadEndLeft, "Dead End Left", signLayout, costs, BetterLIDs.dPath.sign_deadendLeft.asset, BetterLIDs.dPath.sign_deadendLeft.icon, BetterLIDs.ToolBars.Signs_Directions, 0, 0, 0, infiniLoop);
+            CreateProto(registrator, BetterLIDs.Signs.Sign_DeadEnd, "Dead End", signLayout, costs, BetterLIDs.dPath.sign_deadend.asset, BetterLIDs.dPath.sign_deadend.icon, BetterLIDs.ToolBars.Signs_Directions, 0, 0, 0, infiniLoop);
+            CreateProto(registrator, BetterLIDs.Signs.Sign_ForwardRight, "Forward / Right", signLayout, costs, BetterLIDs.dPath.sign_forwardRight.asset, BetterLIDs.dPath.sign_forwardRight.icon, BetterLIDs.ToolBars.Signs_Directions, 0, 0, 0, infiniLoop);
+            CreateProto(registrator, BetterLIDs.Signs.Sign_FuelDiesel, "Fuel Diesel", signLayout, costs, BetterLIDs.dPath.sign_fueldiesel.asset, BetterLIDs.dPath.sign_fueldiesel.icon, BetterLIDs.ToolBars.Signs_Buildings, 0, 0, 0, infiniLoop);
+            CreateProto(registrator, BetterLIDs.Signs.Sign_FuelH2, "Fuel H2", signLayout, costs, BetterLIDs.dPath.sign_fuelh2.asset, BetterLIDs.dPath.sign_fuelh2.icon, BetterLIDs.ToolBars.Signs_Buildings, 0, 0, 0, infiniLoop);
+            CreateProto(registrator, BetterLIDs.Signs.Sign_Hospital, "Hospital", signLayout, costs, BetterLIDs.dPath.sign_hospital.asset, BetterLIDs.dPath.sign_hospital.icon, BetterLIDs.ToolBars.Signs_Buildings, 0, 0, 0, infiniLoop);
+            CreateProto(registrator, BetterLIDs.Signs.Sign_LeftRight, "Left / Right", signLayout, costs, BetterLIDs.dPath.sign_leftright.asset, BetterLIDs.dPath.sign_leftright.icon, BetterLIDs.ToolBars.Signs_Directions, 0, 0, 0, infiniLoop);
+            CreateProto(registrator, BetterLIDs.Signs.Sign_LevelCrossing, "Level Crossing", signLayout, costs, BetterLIDs.dPath.sign_levelcrossing.asset, BetterLIDs.dPath.sign_levelcrossing.icon, BetterLIDs.ToolBars.Signs_Buildings, 0, 0, 0, infiniLoop);
+            CreateProto(registrator, BetterLIDs.Signs.Sign_NoRight, "Right Not Allowed", signLayout, costs, BetterLIDs.dPath.sign_noright.asset, BetterLIDs.dPath.sign_noright.icon, BetterLIDs.ToolBars.Signs_Directions, 0, 0, 0, infiniLoop);
+            CreateProto(registrator, BetterLIDs.Signs.Sign_TrainModern, "Train 2", signLayout, costs, BetterLIDs.dPath.sign_trainModern.asset, BetterLIDs.dPath.sign_trainModern.icon, BetterLIDs.ToolBars.Signs_Buildings, 0, 0, 0, infiniLoop);
+            CreateProto(registrator, BetterLIDs.Signs.Sign_100m, "Distance 100m", signLayout, costs, BetterLIDs.dPath.sign_100m.asset, BetterLIDs.dPath.sign_100m.icon, BetterLIDs.ToolBars.Signs_Misc, 0, 0, 0, infiniLoop);
+            CreateProto(registrator, BetterLIDs.Signs.Sign_200m, "Distance 200m", signLayout, costs, BetterLIDs.dPath.sign_200m.asset, BetterLIDs.dPath.sign_200m.icon, BetterLIDs.ToolBars.Signs_Misc, 0, 0, 0, infiniLoop);
+            CreateProto(registrator, BetterLIDs.Signs.Sign_300m, "Distance 300m", signLayout, costs, BetterLIDs.dPath.sign_300m.asset, BetterLIDs.dPath.sign_300m.icon, BetterLIDs.ToolBars.Signs_Misc, 0, 0, 0, infiniLoop);
         }
 
 
@@ -105,7 +131,7 @@ namespace BetterLife_RoadsAndSigns
                 int heightFrom = h - 1;
                 int? maxTerrainHeight3 = new int?(h - 1);
                 Fix32? vehicleHeight2 = new Fix32?(h - 1);
-                return new LayoutTokenSpec(heightFrom, h, LayoutTileConstraint.UsingPillar, null, null, maxTerrainHeight3, vehicleHeight2, null, null, false, false, 0);
+                return new LayoutTokenSpec(heightFrom, h, LayoutTileConstraint.None | LayoutTileConstraint.Ocean, null, null, maxTerrainHeight3, vehicleHeight2, null, null, false, false, 0);
             });
 
             array[4] = new CustomLayoutToken("|0|", (param, height) =>
@@ -139,20 +165,31 @@ namespace BetterLife_RoadsAndSigns
 
             Proto.Str ps = Proto.CreateStr(id, coment);
             EntityCosts ec = ecTpl.MapToEntityCosts(registrato);
-            LayoutEntityProto.Gfx lg = new LayoutEntityProto.Gfx(
-                prefabPath: asp,
-                prefabOrigin: new RelTile3f(nX, nY, nZ),
-                customIconPath: ico,
-                categories: registrato.GetCategoriesProtos(cat)
-
-
-
-                );
+            if (cat != BetterLIDs.ToolBars.HiddenProto)
+            {
+                LayoutEntityProto.Gfx lg = new LayoutEntityProto.Gfx(
+                    prefabPath: asp,
+                    prefabOrigin: new RelTile3f(nX, nY, nZ),
+                    customIconPath: ico,
+                    categories: registrato.GetCategoriesProtos(cat)
+                    );
+                registrato.PrototypesDb.Add<CustomEntityPrototype>(new CustomEntityPrototype(id, ps, ltemp, ec, lg, ap));
+            }
+            else
+            {
+                LayoutEntityProto.Gfx lg = new LayoutEntityProto.Gfx(
+                    prefabPath: asp,
+                    prefabOrigin: new RelTile3f(nX, nY, nZ),
+                    customIconPath: ico,
+                    categories: ImmutableArray<ToolbarEntryData>.Empty
+                    );
+                registrato.PrototypesDb.Add<CustomEntityPrototype>(new CustomEntityPrototype(id, ps, ltemp, ec, lg, ap));
+            }
             //LayoutEntityProto.Gfx lg = new LayoutEntityProto.Gfx(asp, default(RelTile3f), ico, default(ColorRgba), false, null, new ImmutableArray<ToolbarCategoryProto>?(registrato.GetCategoriesProtos(cat)), false, false, null, null, default(ImmutableArray<string>), int.MaxValue, false);
 
 
 
-            registrato.PrototypesDb.Add<CustomEntityPrototype>(new CustomEntityPrototype(id, ps, ltemp, ec, lg, ap));
+
 
         }
 

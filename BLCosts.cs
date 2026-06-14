@@ -72,6 +72,13 @@ namespace BetterLife_RoadsAndSigns
                     return BLCosts.Build.CP2(40).Product(10, Ids.Products.Potato);
                 }
             }
+            public static EntityCostsTpl indLight1
+            {
+                get
+                {
+                    return BLCosts.Build.CP2(40).Product(2, Ids.Products.ConstructionParts);
+                }
+            }
 
         }
 
@@ -81,7 +88,7 @@ namespace BetterLife_RoadsAndSigns
             {
                 get
                 {
-                    return BLCosts.Build.MaintenanceT1(0).Priority(8).Workers(0).CP(5);
+                    return BLCosts.Build.MaintenanceT1(0).Priority(8).CP(5);
                 }
             }
         }
@@ -91,28 +98,35 @@ namespace BetterLife_RoadsAndSigns
             {
                 get
                 {
-                    return BLCosts.Build.MaintenanceT1(0).Priority(8).Workers(2).CP(10);
+                    return BLCosts.Build.Priority(8).Product(5, Ids.Products.ConcreteSlab);
+                }
+            }
+            public static EntityCostsTpl onewayEntrance
+            {
+                get
+                {
+                    return BLCosts.Build.Priority(8).Product(5, Ids.Products.ConcreteSlab);
                 }
             }
             public static EntityCostsTpl IndustrialLarge
             {
                 get
                 {
-                    return BLCosts.Build.MaintenanceT1(0).Priority(8).Workers(5).CP(30);
+                    return BLCosts.Build.Priority(8).Product(15, Ids.Products.ConcreteSlab);
                 }
             }
             public static EntityCostsTpl Tier1
             {
                 get
                 {
-                    return BLCosts.Build.MaintenanceT1(0).Priority(8).Workers(5).CP(30);
+                    return BLCosts.Build.Priority(8).Product(25, Ids.Products.ConcreteSlab);
                 }
             }
             public static EntityCostsTpl Tier1Large
             {
                 get
                 {
-                    return BLCosts.Build.MaintenanceT1(0).Priority(8).Workers(10).CP(60);
+                    return BLCosts.Build.Priority(8).Product(25, Ids.Products.ConcreteSlab);
                 }
             }
 

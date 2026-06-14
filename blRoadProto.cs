@@ -2,6 +2,7 @@
 using Mafi.Collections;
 using Mafi.Collections.ImmutableCollections;
 using Mafi.Core;
+using Mafi.Core.Buildings.Settlements;
 using Mafi.Core.Entities.Static;
 using Mafi.Core.Entities.Static.Layout;
 using Mafi.Core.Prototypes;
@@ -34,7 +35,7 @@ public class blRoadEntityProto : blRoadEntityProtoBase, IProtoWithTiers, IProtoW
     {
         this.TierData = new TierData(this, 0);
     }
-    public static bool TryCreateLanes(ImmutableArray<RoadLaneSpec> lanes, out ImmutableArray<RoadLaneMetadata> lanesData, out ImmutableArray<RoadLaneTrajectory> trajData, out string error, int segmentsPer10Tiles = 0)
+    public static bool TryCreateLanes(ImmutableArray<RoadLaneSpec> lanes, out ImmutableArray<RoadLaneMetadata> lanesData, out ImmutableArray<RoadLaneTrajectory> trajData, out string error, int segmentsPer10Tiles = 1)
     {
         ImmutableArrayBuilder<RoadLaneMetadata> immutableArrayBuilder = new ImmutableArrayBuilder<RoadLaneMetadata>(lanes.Length);
         ImmutableArrayBuilder<RoadLaneTrajectory> immutableArrayBuilder2 = new ImmutableArrayBuilder<RoadLaneTrajectory>(lanes.Length);

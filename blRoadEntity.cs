@@ -37,7 +37,7 @@ public class blRoadEntity : blRoadEntityBase, IBridgeLaneEntity, IEntityWithOwne
     public blRoadEntity(EntityId id, blRoadEntityProto proto, TileTransform transform, EntityContext context, RoadsManager roadsManager)
         : base(id, proto, transform, context)
     {
-        Log.Info($"BETTERLIFE DEBUG: RoadEntityConstructor id:{id} proto:{proto} transform:{transform} context:{context}");
+        //Log.Info($"BETTERLIFE DEBUG: RoadEntityConstructor id:{id} proto:{proto} transform:{transform} context:{context}");
         this.Prototype = proto;
         this.m_roadsManager = roadsManager;
 

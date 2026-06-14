@@ -71,6 +71,7 @@
 	<ItemGroup>
 	  <Compile Remove="autoSign.cs" />
 	  <Compile Remove="BetterLifeController.cs" />
+	  <Compile Remove="BetterLifesMachineDef.cs" />
 	  <Compile Remove="blZipperCommandsProcessor.cs" />
 	  <Compile Remove="blZipperSetForceEvenInputsCmd.cs" />
 	  <Compile Remove="blZipperSetForceEvenOutputsCmd.cs" />
@@ -92,6 +93,7 @@
 	</ItemGroup>
 
 	<ItemGroup>
+	  <None Remove="config.json" />
 	  <None Remove="MafiZipperInspector.cs.backup" />
 	</ItemGroup>
 
@@ -387,6 +389,7 @@
 		<Copy SourceFiles="$(ProjectDir)\config.json" DestinationFolder="$(COI_MODS)\$(TargetName)" ContinueOnError="true" />
 		<Copy SourceFiles="$(ProjectDir)\readme.txt" DestinationFolder="$(COI_MODS)\$(TargetName)" ContinueOnError="true" />
 		<Copy SourceFiles="$(ProjectDir)\Thumbnail.png" DestinationFolder="$(COI_MODS)\$(TargetName)" ContinueOnError="true" />
+		<Copy SourceFiles="$(ProjectDir)\changelog.txt" DestinationFolder="$(COI_MODS)\$(TargetName)" ContinueOnError="true" />
 		<Copy SourceFiles="$(TargetPath)" DestinationFolder="$(COI_MODS)\$(TargetName)\" />
 		<Copy SourceFiles="$(TargetDir)$(TargetName).pdb" DestinationFolder="$(COI_MODS)\$(TargetName)\" Condition="'$(Configuration)' == 'Debug'" />
 		<Copy SourceFiles="$(TargetDir)0Harmony.dll" DestinationFolder="$(COI_MODS)\$(TargetName)\" />

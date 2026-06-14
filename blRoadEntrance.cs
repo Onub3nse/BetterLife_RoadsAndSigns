@@ -1,18 +1,26 @@
 ﻿using Mafi;
 using Mafi.Collections;
+using Mafi.Collections.ImmutableCollections;
 using Mafi.Core;
 using Mafi.Core.Entities;
 using Mafi.Core.Entities.Static;
+using Mafi.Core.Entities.Static.Layout;
 using Mafi.Core.Roads;
+using Mafi.Core.Terrain;
 using Mafi.Serialization;
 using System;
+using System.Collections.Generic;
 
 namespace BetterLife_RoadsAndSigns;
 
 [GenerateSerializer(false, null, 0, null)]
-public class blRoadEntranceEntity : blRoadEntityBase, IRoadGraphTerrainConnector, IRoadGraphEntity, ILayoutEntity, IStaticEntity, IEntityWithPosition, IAreaSelectableEntity, IRenderedEntity, IEntity, IObjectWithTitle, IIsSafeAsHashKey, ICloseableRoadGraphEntity, IEntityWithSimUpdate
+public class blRoadEntranceEntity : blRoadEntityBase, IRoadGraphTerrainConnector, IRoadGraphEntity, ILayoutEntity, IStaticEntity, IEntityWithPosition, IAreaSelectableEntity, IRenderedEntity, IEntity, IObjectWithTitle,
+                                                    IIsSafeAsHashKey, ICloseableRoadGraphEntity, IEntityWithSimUpdate
 {
     private readonly RoadsManager m_roadsManager;
+    private TerrainManager _terrainManager;
+    private EntitiesManager _entitiesManager;
+    private EntitiesBuilder _entitiesBuilder;
     private static readonly Action<object, BlobWriter> s_serializeDataDelayedAction;
     private static readonly Action<object, BlobReader> s_deserializeDataDelayedAction;
     public override bool CanBePaused
@@ -37,12 +45,21 @@ public class blRoadEntranceEntity : blRoadEntityBase, IRoadGraphTerrainConnector
             return false;
         }
     }
+    protected override void OnAddedToWorld(EntityAddReason reason)
+    {
+        base.OnAddedToWorld(reason);
+        //this.Prototype.Layout.GetVehicleSurfaceHeights
+    }
     public Percent GateClosedPercentage { get; private set; }
     public new blRoadEntranceEntityProto Prototype { get; private set; }
-    public blRoadEntranceEntity(EntityId id, blRoadEntranceEntityProto proto, TileTransform transform, EntityContext context, RoadsManager roadsManager)
+    public blRoadEntranceEntity(EntityId id, blRoadEntranceEntityProto proto, TileTransform transform, EntityContext context, RoadsManager roadsManager, TerrainManager terrainManager,
+        EntitiesBuilder entitiesBuilder, EntitiesManager entitiesManager)
         : base(id, proto, transform, context)
     {
         this.m_roadsManager = roadsManager;
+        _terrainManager = terrainManager;
+        _entitiesBuilder = entitiesBuilder;
+        _entitiesManager = entitiesManager;
         this.Prototype = proto;
     }
     public RoadTerrainConnection GetRoadTerrainConnection(int index)
